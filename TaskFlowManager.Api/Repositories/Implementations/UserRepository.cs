@@ -31,7 +31,7 @@ namespace TaskFlowManager.Api.Repositories.Implementations
 
         public async Task<User?> GetByEmailAsync(string email)
         {
-            var sql = @"SELECT * FROM Users WHERE Email = @Email";
+            var sql = @"SELEC * FROM Users WHERE Email = @Email";
             using var conn = _context.CreateConnection();
             return await conn.QueryFirstOrDefaultAsync<User>(sql, new { Email = email });
         }
